@@ -75,7 +75,12 @@ app.route('/view')
 
 app.route('/panel')
 	.get((req,res) =>{
-		res.render('panel')
+		Troopr.find((err,joe) =>{
+			if(err){
+				console.log(err)
+			}
+			res.render('panel',{result:joe})
+		})
 	})
 
 

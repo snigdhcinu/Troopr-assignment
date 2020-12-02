@@ -2,16 +2,22 @@ body{
 	min-height: 100vh;
 }
 #main-body{
-	display: flex;
+	display: grid;
+	grid-template-areas: 
+		"header"
+		"mainBody";
+		/*"footer"*/
+	;
+	grid-row-gap: 4rem;
+	background-color: #f4f3f3;
 }
-#footer{
-	min-width: 90vw;
+#header{
+	min-width: 95vw;
+	min-height: 17vh;
+	padding-top: 1rem;
 	background-color: #fff;
-}
-#container{
-	background-color: #fafafa;
-	justify-content: center;
-	
+	grid-area: header;
+	box-shadow: 0px 1px 5px -1px #5c636e;
 }
 #info{
 	float: left;
@@ -20,8 +26,66 @@ body{
 #btn-container{
 	float: right;
 	margin-right: 4rem;
+	/*margin-bottom: 2rem;*/
 	padding-top: 1.5rem;
+
 }
 #trigger-btn{
 	font-size: 1.1em;
+	background-color: #78b7bb;
+	border-style: solid;
+	border-width: 1px;
+	padding: 6px 10px;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	outline: none;
+}
+#trigger-btn:hover{
+	box-shadow: 2px 2px 15px 5px #dfdfdf;
+}
+
+#container{
+	height: 100vh;
+	grid-area: mainBody;
+	justify-self:center;
+}
+#result{
+	width: 100%;
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 0px 2rem;
+	box-shadow: 2px 2px 15px 2px #555;
+}
+
+.ip-btn{
+	border-style: none;
+	color: #c1c1c1;
+	outline: none;
+}
+.table{
+	font-size: 1.2rem;
+}
+
+
+
+/* styling for the documents */
+.oper-toolbox{
+	position: absolute;
+	transform: scale(0.7);
+	background-color: #fff;
+	border-radius: 10px;
+	outline: none;
+	display: none;
+
+}
+.edit{
+	background-color: #fff;
+	border-style: none;
+	outline: none;
+}
+.delete{
+	background-color: #fff;
+	border-style: none;
+	outline: none;
 }

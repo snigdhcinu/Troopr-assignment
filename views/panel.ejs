@@ -3,21 +3,65 @@
 <head>
 	<title>Panel</title>
 	<link rel="stylesheet" type="text/css" href="/css/panel.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
 	<div id="main-body">
-		<div id="footer">
+		<div id="header">
 			<h1 id="info">User Directory</h1>
 			<div id="btn-container"><button id="trigger-btn">Add New User</button></div>
 		</div>
-		<div id="container">
-			
-		</div>
+		<% if (result.length == 0) { -%>
+			<div id="container">
+				<div id="result">
+					<h1>No result to show !!</h1>
+				</div>
+			</div>	
+		<% } else { -%>
+			<div id="container">
+				<div id="result">
+					<table class="table">
+					  <thead>
+					    <tr>
+					      <th scope="col">#</th>
+					      <th scope="col">USERNAME</th>
+					      <th scope="col">ADDRESS</th>
+					      <th scope="col">CONTACT</th>
+					      <th scope="col">EMAIL</th>
+					      <th></th>
+					      <th></th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					  <% for (let i = 0; i < result.length; i++) { -%>	
+					    <tr>
+					      <th scope="row"><%= (i+1) %></th>
+					      <td><%=result[i].username%></td>
+					      <td><%=result[i].address%></td>
+					      <td><%=result[i].phno%></td>
+					      <td><%=result[i].email%></td>
+					      <td><button class="ip-btn" onclick="showEdit(<%=i%>)">•••</button></td>
+					      	<td class="oper-toolbox">
+					    		<button class="edit">📝 Edit Details</button><br>
+					    		<button class="delete">🗑️ Delete User</button>
+					    	</td>
+					    </tr>
+					    
+					    <% } -%>
+					  </tbody>
+					</table>
+				</div>
+			</div>
+		<% } -%>
+		
 	</div>
 	<div id="form" >
 		
 	</div>
-
+<!-- <hr> -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/js/panel.js"></script>
 </body>
 </html>
