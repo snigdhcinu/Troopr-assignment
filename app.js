@@ -73,6 +73,12 @@ app.route('/view')
 	})
 
 
+app.route('/panel')
+	.get((req,res) =>{
+		res.render('panel')
+	})
+
+
 app.listen(8000,() =>{
 	console.log('server online on port 8000')
 })

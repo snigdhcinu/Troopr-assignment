@@ -1,0 +1,27 @@
+body{
+	min-height: 100vh;
+}
+#main-body{
+	display: flex;
+}
+#footer{
+	min-width: 90vw;
+	background-color: #fff;
+}
+#container{
+	background-color: #fafafa;
+	justify-content: center;
+	
+}
+#info{
+	float: left;
+	margin-left: 4rem;
+}
+#btn-container{
+	float: right;
+	margin-right: 4rem;
+	padding-top: 1.5rem;
+}
+#trigger-btn{
+	font-size: 1.1em;
+}
