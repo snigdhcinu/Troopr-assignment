@@ -28,31 +28,6 @@ const trooprSchema=new mongoose.Schema({
 
 const Troopr=mongoose.model('Troopr',trooprSchema);
 
-app.route('/')
-	.get((req,res) =>{
-		res.render('signup')
-	})
-	.post(upload.single('avatar'),(req,res) =>{
-		let username = req.body.username;
-		let email = req.body.email;
-		let phno = req.body.phno;
-		let address = req.body.address;
-	
-		console.log(req.file)
-		const newbie = new Troopr({
-			username:username,
-			email:email,
-			phno:phno,
-			address:address,
-			img:{
-				data:req.file.path,
-				contentType:req.file.mimetype
-			}
-		})
-		newbie.save();
-		res.send('success')
-	})
-
 app.route('/view')
 	.get((req,res) =>{
 		Troopr.find({email:'snigdhshourya@opentabs.org'},(err,joe) =>{
@@ -87,7 +62,8 @@ app.route('/panel/create')
 	.get((req,res)=>{
 		// res.render('panel',{type:'create'})
 	})
-	.post((req,res) =>{
+	.post(upload.single('avatar'),(req,res) =>{
+		console.log(req.body)
 		const recruit = new Troopr({
 			username:req.body.username,
 			email:req.body.email,

@@ -63,9 +63,11 @@
 		
 	</div>
 	<div id="modal-form-create" >
-		<div id="form-container">
-			<%- include('form')%>
-		</div>
+		<form action="/panel/create" method="post" enctype="multipart/form-data">
+			<div id="form-container">
+				<%- include('form')%>
+			</div>
+		</form>
 	</div>
 <!-- <hr> -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
