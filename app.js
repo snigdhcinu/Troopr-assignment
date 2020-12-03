@@ -79,37 +79,62 @@ app.route('/panel')
 			if(err){
 				console.log(err)
 			}
-			res.render('panel',{result:joe})
+			res.render('panel',{result:joe,type:'view-table'})
 		})
 	})
 
-app.route('/panel/delete')
-	.get((req,res) => {
-
+app.route('/panel/create')
+	.get((req,res)=>{
+		// res.render('panel',{type:'create'})
 	})
 	.post((req,res) =>{
-		let userId = req.params.userId;
-		console.log(userId)
+		const recruit = new Troopr({
+			username:req.body.username,
+			email:req.body.email,
+			phno:req.body.phno,
+			address:req.body.address,
+			img:{
+				data:req.file.path,
+				contentType:req.file.mimetype
+			}
+		})
+		recruit.save();
+		res.redirect('/panel')
 	})
 
+
+let userUpdateId;
 app.route('/panel/update')
 	.get((req,res) =>{
-
+		// Troopr.findById(userId,(err, recruit) => {
+		// 	// console.log(recruit);
+		// 	// res.redirect('/panel')
+		// 	res.render('panel',{result:recruit,type:'update'})
+		// });
 	})
 	.post((req,res) =>{
 		console.log('--------------------')
-		let userId = req.body.id;
-		console.log(userId)
+		userUpdateId = req.body.id;
+		// console.log(userId)
+		res.redirect('/panel/update')
 	})
 
 app.route('/panel/delete')
-	.get((req,res) =>{
 
-	})
 	.post((req,res) =>{
-		console.log('--------------------')
 		let userId = req.body.id;
-		console.log(userId)
+		Troopr.deleteOne({id:userId},(err) =>{
+			if(err){
+				console.log(err);
+			}
+			else{
+				console.log('Deletion successful')
+				res.redirect('/panel')
+			}
+			
+		})
+
+
 	})
 
 

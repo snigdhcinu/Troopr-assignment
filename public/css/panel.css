@@ -12,7 +12,7 @@ body{
 	background-color: #f4f3f3;
 }
 #header{
-	min-width: 95vw;
+	min-width: 100vw;
 	min-height: 17vh;
 	padding-top: 1rem;
 	background-color: #fff;
@@ -119,4 +119,38 @@ body{
 	color: #fff;
 	background-color: #c05555;
 	font-size: 1.5rem;
+}
+
+
+					 /*ADD NEW USER SECTION*/
+
+#modal-form-create{
+	display: none;
+	position: absolute;
+	margin-left: 25%;
+	margin-top: 15%;
+
+}
+#form-container{
+	background-color: #fff;
+	min-height: 40vh;
+	min-width: 50vw;
+	border-radius: 20px;
+	padding: 1rem 2rem;
+	display: grid;
+}
+#form-container button{
+	width: 40%;
+	justify-self:center;
+}
+
+#form-container input[type='file']{
+	width: 40%;
+}
+#cross{
+	position: absolute;
+	justify-self: end; 
+	margin-right: 2em;
+	padding-top: 1em;
+	cursor: pointer;
 }

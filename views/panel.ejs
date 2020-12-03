@@ -9,7 +9,7 @@
 	<div id="main-body">
 		<div id="header">
 			<h1 id="info">User Directory</h1>
-			<div id="btn-container"><button id="trigger-btn">Add New User</button></div>
+				<div id="btn-container"><button id="trigger-btn">Add New User</button></div>
 		</div>
 		<% if (result.length == 0) { -%>
 			<div id="container">
@@ -62,8 +62,10 @@
 		<% } -%>
 		
 	</div>
-	<div id="form" >
-		
+	<div id="modal-form-create" >
+		<div id="form-container">
+			<%- include('form')%>
+		</div>
 	</div>
 <!-- <hr> -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
