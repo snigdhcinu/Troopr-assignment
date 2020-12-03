@@ -74,18 +74,49 @@ body{
 	position: absolute;
 	transform: scale(0.7);
 	background-color: #fff;
+	/*border-style: solid;*/
+	/*border-width: 1px;*/
+	box-shadow: 1px 1px 15px 2px #123;
 	border-radius: 10px;
 	outline: none;
 	display: none;
 
+}
+.ip-btn:hover{
+	transition: background-color 3s ease;
+	transition: color 3s ease;
+	background-color: #79a3b1;
+	color: #fff;
+}
+.ip-btn:focus{
+	outline: none;
+}
+.hidden-ip{
+	display: none;
 }
 .edit{
 	background-color: #fff;
 	border-style: none;
 	outline: none;
 }
+.edit:focus{
+	outline: none;
+}
+.edit:hover{
+	color: #fff;
+	background-color: #5aa469;
+	font-size: 1.5rem;
+}
 .delete{
 	background-color: #fff;
 	border-style: none;
 	outline: none;
+}
+.delete:focus{
+	outline: none;
+}
+.delete:hover{
+	color: #fff;
+	background-color: #c05555;
+	font-size: 1.5rem;
 }

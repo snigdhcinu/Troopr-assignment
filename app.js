@@ -83,6 +83,35 @@ app.route('/panel')
 		})
 	})
 
+app.route('/panel/delete')
+	.get((req,res) => {
+
+	})
+	.post((req,res) =>{
+		let userId = req.params.userId;
+		console.log(userId)
+	})
+
+app.route('/panel/update')
+	.get((req,res) =>{
+
+	})
+	.post((req,res) =>{
+		console.log('--------------------')
+		let userId = req.body.id;
+		console.log(userId)
+	})
+
+app.route('/panel/delete')
+	.get((req,res) =>{
+
+	})
+	.post((req,res) =>{
+		console.log('--------------------')
+		let userId = req.body.id;
+		console.log(userId)
+	})
+
 
 app.listen(8000,() =>{
 	console.log('server online on port 8000')

@@ -42,8 +42,15 @@
 					      <td><%=result[i].email%></td>
 					      <td><button class="ip-btn" onclick="showEdit(<%=i%>)">•••</button></td>
 					      	<td class="oper-toolbox">
-					    		<button class="edit">📝 Edit Details</button><br>
-					    		<button class="delete">🗑️ Delete User</button>
+
+								<form method="post" action="/panel/update">
+									<input class="hidden-ip" type="text" name="id" value="<%= result[i]._id %>">
+									<button class="edit" type="submit">📝 Edit Details</button><br>	
+								</form>
+					    		<form action="/panel/delete?userId=<%= result[i]._id%>" method="post">
+					    			<button class="delete" type="submit">🗑️ Delete User</button>	
+					    		</form>
+					    		 
 					    	</td>
 					    </tr>
 					    
